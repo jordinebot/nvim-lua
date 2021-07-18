@@ -21,12 +21,15 @@ utils.nnoremap('<Esc>', ':nohlsearch<Bar>:echo<CR>') -- remove highlighting of l
 utils.nnoremap('<Leader>r', [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
 
 
--- Buffers and Navigation
+-- Buffers, Tabs, and Navigation
 utils.nnoremap('<C-s>', [[:vsplit<CR>]])     -- create a vertical split
+utils.nnoremap('<C-t>', ':tabnew<CR>')       -- create a new empty tab
 
 utils.nnoremap('<Leader>.', [[:ls<CR>:b]])  -- list all buffers
 utils.nnoremap('<Tab>', [[:bn<CR>]])        -- next buffer
 utils.nnoremap('<S-Tab>', [[:bp<CR>]])      -- previous buffer
+
+utils.nnoremap('<C-Tab>', ':tabNext<CR>')   -- next tab
 
 utils.nnoremap('<Up>', [[<C-w><Up>]])       -- use arrows to navigate through splits
 utils.nnoremap('<Down>', [[<C-w><Down>]])

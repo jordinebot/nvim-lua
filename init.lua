@@ -1,5 +1,5 @@
 -- This Lua configuration has been created following Emiliene Lemaire's quick guide:
--- https://emilienl.medium.com/a-quick-guide-to-configure-neovim-in-lua-7c58a28e624c
+-- (https://emilienl.medium.com/a-quick-guide-to-configure-neovim-in-lua-7c58a28e624c)
 
 local opt = vim.opt
 
@@ -48,3 +48,10 @@ opt.incsearch     = true -- search while I type
 
 -- Advanced configuration
 require('jnebot.keybindings')
+require('jnebot.plugins')
+
+-- Theme
+vim.cmd('colorscheme jummidark')
+
+-- Documentation and useful resources
+-- - Neovim 0.5 features and the switch to init.lua (https://oroques.dev/notes/neovim-init/)
