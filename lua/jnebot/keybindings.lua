@@ -1,5 +1,5 @@
-local utils = require('jnebot.utils')
 
+local utils = require('jnebot.utils')
 -- Essentials
 utils.inoremap('jj', '<Esc>j')
 utils.inoremap('kk', '<Esc>k')
@@ -18,14 +18,13 @@ utils.vnoremap('<C-j>', [[:m '>+1<CR>gv=gv]])     -- move current line down
 
 -- Search and Replace
 utils.nnoremap('<Esc>', ':nohlsearch<Bar>:echo<CR>') -- remove highlighting of last search with <Esc>
-utils.nnoremap('<Leader>r', [[:%s/\<<C-r><C-w>\>//g<Left><Left>]])
+utils.nnoremap('<Leader>r', [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], {noremap = true})
 
 
 -- Buffers, Tabs, and Navigation
 utils.nnoremap('<C-s>', [[:vsplit<CR>]])     -- create a vertical split
 utils.nnoremap('<C-t>', ':tabnew<CR>')       -- create a new empty tab
 
-utils.nnoremap('<Leader>.', [[:ls<CR>:b]])  -- list all buffers
 utils.nnoremap('<Tab>', [[:bn<CR>]])        -- next buffer
 utils.nnoremap('<S-Tab>', [[:bp<CR>]])      -- previous buffer
 
@@ -35,3 +34,15 @@ utils.nnoremap('<Up>', [[<C-w><Up>]])       -- use arrows to navigate through sp
 utils.nnoremap('<Down>', [[<C-w><Down>]])
 utils.nnoremap('<Left>', [[<C-w><Left>]])
 utils.nnoremap('<Right>', [[<C-w><Right>]])
+
+-- Abbrebiations
+vim.cmd[[
+  cnoreabbrev W wa
+]]
+
+-- Insert Content
+utils.nnoremap('<Leader>d', [[:r !date +\%Y-\%m-\%d<CR>]])                      -- insert current date as YYYY-MM-DD
+
+
+utils.nnoremap('<Leader>L', [["ayiwOconsole.log('<C-R>a:', <C-R>a);<Esc>]])     -- insert console.log above current line
+utils.nnoremap('<Leader>l', [["ayiwoconsole.log('<C-R>a:', <C-R>a);<Esc>]])     -- insert console.log below current line

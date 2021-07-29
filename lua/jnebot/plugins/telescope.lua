@@ -1,7 +1,10 @@
 local utils = require('jnebot.utils')
 
 utils.nnoremap('<Leader>ff', ':Telescope find_files<CR>')
+utils.nnoremap('<C-p>', ':Telescope find_files<CR>')
 utils.nnoremap('<Leader>fg', ':Telescope live_grep<CR>')
+utils.nnoremap('<Leader>fs', ':Telescope grep_string<CR>')
+utils.nnoremap('<Leader>.', ':Telescope buffers<CR>')
 utils.nnoremap('<Leader>fb', ':Telescope buffers<CR>')
 utils.nnoremap('<Leader>fh', ':Telescope help_tags<CR>')
 
@@ -14,7 +17,8 @@ require('telescope').setup{
       '--with-filename',
       '--line-number',
       '--column',
-      '--smart-case'
+      '--smart-case',
+      '--fixed-strings'
     },
     prompt_prefix = "> ",
     selection_caret = "> ",
