@@ -69,13 +69,13 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ReplaceWithRegister = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister"
+  },
   dracula = {
     loaded = true,
     path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/dracula"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
   ["lexima.vim"] = {
     loaded = true,
@@ -121,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-polyglot"
@@ -128,6 +132,7 @@ _G.packer_plugins = {
   ["vim-prettier"] = {
     loaded = false,
     needs_bufread = true,
+    only_cond = false,
     path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/opt/vim-prettier"
   },
   ["vim-signify"] = {
@@ -137,6 +142,26 @@ _G.packer_plugins = {
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-system-copy"] = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-system-copy"
+  },
+  ["vim-textobj-indent"] = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-textobj-indent"
+  },
+  ["vim-textobj-line"] = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-textobj-line"
+  },
+  ["vim-textobj-user"] = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vim-textobj-user"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/Users/jordi.nebot/.local/share/nvim/site/pack/packer/start/vimwiki"
   }
 }
 
@@ -145,16 +170,16 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'vim-prettier'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType less ++once lua require("packer.load")({'vim-prettier'}, { ft = "less" }, _G.packer_plugins)]]
 vim.cmd [[au FileType scss ++once lua require("packer.load")({'vim-prettier'}, { ft = "scss" }, _G.packer_plugins)]]
 vim.cmd [[au FileType graphql ++once lua require("packer.load")({'vim-prettier'}, { ft = "graphql" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-prettier'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-prettier'}, { ft = "vue" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'vim-prettier'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
-vim.cmd [[au FileType css ++once lua require("packer.load")({'vim-prettier'}, { ft = "css" }, _G.packer_plugins)]]
-vim.cmd [[au FileType less ++once lua require("packer.load")({'vim-prettier'}, { ft = "less" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

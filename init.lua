@@ -4,7 +4,7 @@
 local opt = vim.opt
 
 -- Essentials
-vim.g.mapleader = ','
+vim.g.mapleader = ','                                       -- Set the <Leader> key ('/' is the default)
 
 -- Behaviors
 opt.belloff     = 'all'                                     -- NO BELLS!
