@@ -81,6 +81,9 @@ require('packer').startup(function()
   -- tpope's comment action
   use 'tpope/vim-commentary'
 
+  -- tpope's repeat
+  use 'tpope/vim-repeat'
+
 
   -- Custom Operators
   -- ----------------
@@ -105,6 +108,7 @@ require('packer').startup(function()
 
   -- Themes
   -- ------
+  use "projekt0n/github-nvim-theme"
   use {'dracula/vim', as = 'dracula'}
 
 

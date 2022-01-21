@@ -19,6 +19,7 @@ opt.mouse       = 'a'                                       -- use mouse to scro
 
 -- Look and feel
 opt.number         = true                                   -- absolute numbers...
+opt.relativenumber = true                                   -- ...and also relative. So, absolute in current line relative in others.
 opt.cursorline     = true                                   -- highlight the current line
 opt.colorcolumn    = '80,120'                               -- show ruler on columns 80 & 120
 opt.list           = true                                   -- show list chars
@@ -71,4 +72,6 @@ vim.o.completeopt = 'menuone,noselect' -- required by nvim-compe
 
 
 -- Documentation and useful resources
+-- - Getting started using Lua in Neovim (https://github.com/nanotee/nvim-lua-guide)
 -- - Neovim 0.5 features and the switch to init.lua (https://oroques.dev/notes/neovim-init/)
+-- - Everything you need to know to configure neovim using lua (https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/)
