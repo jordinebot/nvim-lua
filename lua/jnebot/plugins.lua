@@ -41,29 +41,14 @@ require('packer').startup(function()
   -- lazy load syntax highlighting for many languages
   use 'sheerun/vim-polyglot'
 
-  -- integrate Prettier into vim
-  use {
-    'prettier/vim-prettier',
-    run = 'yarn install',
-    ft = {
-      'javascript',
-      'typescript',
-      'typescriptreact',
-      'css',
-      'less',
-      'scss',
-      'graphql',
-      'markdown',
-      'vue',
-      'html'
-    }
-  }
-
   -- LSP server for autocompletion
   use 'neovim/nvim-lspconfig'
 
   -- autocompletion plugin
   use 'hrsh7th/nvim-compe'
+
+  -- code auto-formatter
+  use 'sbdchd/neoformat'
 
   -- git diff
   use 'mhinz/vim-signify'
@@ -122,4 +107,5 @@ require('jnebot.plugins.lspconfig')
 require('jnebot.plugins.compe')
 require('jnebot.plugins.lualine')
 require('jnebot.plugins.vimwiki')
+require('jnebot.plugins.neoformat')
 

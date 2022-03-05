@@ -48,3 +48,7 @@ vim.cmd[[ cnoreabbrev W wa ]]
 utils.nnoremap('<Leader>d', [[:r !date +\%Y-\%m-\%d<CR>]])                      -- insert current date as YYYY-MM-DD
 utils.nnoremap('<Leader>L', [["ayiwOconsole.log('<C-R>a:', <C-R>a);<Esc>]])     -- insert console.log above current line
 utils.nnoremap('<Leader>l', [["ayiwoconsole.log('<C-R>a:', <C-R>a);<Esc>]])     -- insert console.log below current line
+
+
+-- Auto-formatter
+
