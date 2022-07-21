@@ -6,6 +6,12 @@ local opt = vim.opt
 -- Essentials
 vim.g.mapleader = ','                                       -- Set the <Leader> key ('/' is the default)
 
+-- Disable optional providers warning on :checkhealth
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- Behaviors
 opt.belloff     = 'all'                                     -- NO BELLS!
 opt.swapfile    = false                                     -- no swap files
